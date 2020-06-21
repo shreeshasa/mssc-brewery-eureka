@@ -77,12 +77,29 @@
   <profiles>
     <profile>
       <id>docker</id>
+      <id>docker</id>
       <build>
         <plugins>
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-maven-plugin</artifactId>
             <version>0.33.0</version>
+            <executions>
+              <execution>
+                <id>docker-build</id>
+                <goals>
+                  <goal>build</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+              <execution>
+                <id>docker-push</id>
+                <goals>
+                  <goal>push</goal>
+                </goals>
+                <phase>deploy</phase>
+              </execution>
+            </executions>
             <configuration>
               <verbose>true</verbose>
               <images>
