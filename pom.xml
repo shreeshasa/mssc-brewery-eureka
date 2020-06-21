@@ -74,9 +74,9 @@
       </plugin>
     </plugins>
   </build>
+
   <profiles>
     <profile>
-      <id>docker</id>
       <id>docker</id>
       <build>
         <plugins>
